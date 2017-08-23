@@ -26,7 +26,7 @@ class Main {
         			{
 		        		for (token=lexer.nextToken(); token.getType()!=Token.EOF; token=lexer.nextToken())
 		        		{
-		        			String type = "";
+						String type = "";
 		        			String text = token.getText();
 
 		        			switch (token.getType())
@@ -34,7 +34,22 @@ class Main {
 		        			case DecafLexer.ID:
 		        				type = " IDENTIFIER";
 		        				break;
-		        			}
+						case DecafLexer.CHAR:
+							type = " CHARLITERAL";
+							break; 	
+						case DecafLexer.STRING:
+							type = " STRING";
+							break;
+						case DecafLexer.WS_:
+							type = " WS_";
+							break;
+						case DecafLexer.SL_COMMENT:
+							type = " SL_COMMENT";
+							break;
+						case DecafLexer.CHARDOIS:
+							type = " CHAR2";
+							break;
+						}
 		        			System.out.println (token.getLine() + type + " " + text);
 		        		}
 		        		done = true;
