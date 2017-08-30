@@ -46,9 +46,6 @@ class Main {
 						case DecafLexer.SL_COMMENT:
 							type = " SL_COMMENT";
 							break;
-						case DecafLexer.CHARDOIS:
-							type = " CHAR2";
-							break;
 						}
 		        			System.out.println (token.getLine() + type + " " + text);
 		        		}
