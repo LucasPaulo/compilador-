@@ -41,10 +41,16 @@ class Main {
 							type = " STRING";
 							break;
 						case DecafLexer.WS_:
-							type = " WS_";
+							type = " WS";
 							break;
 						case DecafLexer.SL_COMMENT:
 							type = " SL_COMMENT";
+							break;
+						case DecafLexer.NUM:
+							type = " NUM";
+							break;
+						case DecafLexer.INTLARAL:
+							type = " INTLARAL";
 							break;
 						}
 		        			System.out.println (token.getLine() + type + " " + text);
