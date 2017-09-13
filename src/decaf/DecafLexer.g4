@@ -32,9 +32,9 @@ WS_ : (' ' | '\n' ) -> skip;
 SL_COMMENT : '//' (~'\n')* '\n' -> skip;
 
 CHAR : '\'' (ESC|'\\t'|'\\\\'|[a-zA-Z0-9]) '\'';
-STRING : '"' ((ESC|'\''|POT)*[a-zA-Z]+) '"';
+STRING : '"' (ESC|'\''|POT|[a-zA-Z]|'\\\\')* '"' ;
 
 
 fragment
 ESC :  '\\' ('\n'|'"');
-POT : (','|'.');
+POT: ('.'|','|'?'|'\\');
