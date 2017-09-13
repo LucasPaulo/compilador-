@@ -31,11 +31,11 @@ class Main {
 
 		        			switch (token.getType())
 		        			{
-		        			case DecafLexer.ID:
-		        				type = " IDENTIFIER";
-		        				break;
-						case DecafLexer.CHAR:
+		        			case DecafLexer.CHAR:
 							type = " CHARLITERAL";
+							break; 
+						case DecafLexer.ID:
+							type = " IDENTIFIER";
 							break; 	
 						case DecafLexer.STRING:
 							type = " STRING";
@@ -46,11 +46,17 @@ class Main {
 						case DecafLexer.SL_COMMENT:
 							type = " SL_COMMENT";
 							break;
-						case DecafLexer.NUM:
-							type = " NUM";
-							break;
 						case DecafLexer.INTLARAL:
-							type = " INTLARAL";
+							type = " INTLITERAL";
+							break;
+						case DecafLexer.LCURLY:
+							type = " LCURLY";
+							break;
+						case DecafLexer.RCURLY:
+							type = " RCURLY";
+							break;
+						case DecafLexer.STRINGLITERAL:
+							type = " STRINGLITERAL";
 							break;
 						}
 		        			System.out.println (token.getLine() + type + " " + text);
