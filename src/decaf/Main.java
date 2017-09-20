@@ -31,14 +31,14 @@ class Main {
 
 		        			switch (token.getType())
 		        			{
-		        			case DecafLexer.CHAR:
+						case DecafLexer.CHAR:
 							type = " CHARLITERAL";
 							break; 
 						case DecafLexer.ID:
 							type = " IDENTIFIER";
 							break; 	
 						case DecafLexer.STRING:
-							type = " STRING";
+							type = " STRINGLITERAL";
 							break;
 						case DecafLexer.WS_:
 							type = " WS";
@@ -58,7 +58,7 @@ class Main {
 						case DecafLexer.STRINGLITERAL:
 							type = " STRINGLITERAL";
 							break;
-						}
+						}//aaf
 		        			System.out.println (token.getLine() + type + " " + text);
 		        		}
 		        		done = true;
