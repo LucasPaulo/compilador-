@@ -17,11 +17,11 @@ tokens
 LCURLY : '{';
 RCURLY : '}';
 
-RESERVA: 'if';
+RESERVA:('if'|'boolean'|'callout'|'class'|'else'|'false'|'if'|'int'|'return'|'true'|'void'|'for'|'forpar'|'break'|'continue');
 
-SINAL: ('-'|'+'|'*'|'<'|'<='|'!='|'&&');
+SINAL: ('-'|'+'|'*'|'<'|'<='|'!='|'&&'|';'|','|'['|'|'|'='|'('|')'|']'|'>');
 
-INTLARAL : ('0x'('a'..'f'|'A'..'F'|'0'..'9')+)? ('0'..'9')*;
+INTLARAL : ('0x')?('a'..'f'|'A'..'F'|'0'..'9')+('0'..'9')*;
 
 STRINGLITERAL: '\"'(ESC|'\''|[a-zA-Z])+'\"';
 
@@ -33,6 +33,6 @@ CHAR : '\'' (ESC|'\\t'|'\\\\'|[a-zA-Z0-9]) '\'';
 STRING : '"' (ESC|POT|'a'..'z'|'A'..'Z'|'\\\\'|' ')+ '"' ;
 
 ID  : ('a'..'z'|'A'..'Z'|'_')+([0-9]*);
-fragment
-ESC :  '\\' ('\n'|'"');
-POT: ('.'|','|'?'|'\\'|':'|'\\\'');
+
+fragment ESC: '\\' ('\n'|'"');
+fragment POT: ('.'|','|'?'|'\\'|':'|'\\\'');

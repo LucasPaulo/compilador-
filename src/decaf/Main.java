@@ -58,7 +58,7 @@ class Main {
 						case DecafLexer.STRINGLITERAL:
 							type = " STRINGLITERAL";
 							break;
-						}//aaf
+						}//aaaasaffa
 		        			System.out.println (token.getLine() + type + " " + text);
 		        		}
 		        		done = true;
