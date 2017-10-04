@@ -17,9 +17,19 @@ tokens
 LCURLY : '{';
 RCURLY : '}';
 
-RESERVA:('if'|'boolean'|'callout'|'class'|'else'|'false'|'if'|'int'|'return'|'true'|'void'|'for'|'forpar'|'break'|'continue');
+PROGRAM: 'class Program'; 
+
+RESERVA:('if'|'callout'|'class'|'else'|'if'|'return'|'void'|'for'|'forpar'|'break'|'continue');
+
+TYPE: ('int'|'boolean');
+
+BOOL: ('true'|'false');
+
+BETO: [a-z|A-Z];
 
 SINAL: ('-'|'+'|'*'|'<'|'<='|'!='|'&&'|';'|','|'['|'|'|'='|'('|')'|']'|'>');
+
+ARITH: '+'|'-'|'*'|'/'|'%';
 
 INTLARAL : ('0x')?('a'..'f'|'A'..'F'|'0'..'9')+('0'..'9')*;
 
