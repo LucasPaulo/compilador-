@@ -1,12 +1,27 @@
 package decaf;
 
+//import java.io.*;
+//import antlr.Token;
+//import org.antlr.v4.runtime.Token;
+//import org.antlr.v4.runtime.ANTLRInputStream;
+//import org.antlr.v4.runtime.CommonTokenStream;
+//import java6035.tools.CLI.*;
+
 import java.io.*;
 //import antlr.Token;
+import java.util.Arrays;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
 import org.antlr.v4.runtime.Token;
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
-import java6035.tools.CLI.*;
+import org.antlr.v4.runtime.tree.ParseTree;
+import org.antlr.v4.gui.TreeViewer;
+import org.antlr.v4.runtime.ParserRuleContext;
+import org.antlr.v4.runtime.tree.ParseTreeWalker;
 
+import java6035.tools.CLI.*;
 class Main {
     public static void main(String[] args) {
         try {
@@ -58,7 +73,7 @@ class Main {
 						case DecafLexer.STRINGLITERAL:
 							type = " STRINGLITERAL";
 							break;
-						}//aaaasaffa
+						}//aacc
 		        			System.out.println (token.getLine() + type + " " + text);
 		        		}
 		        		done = true;
