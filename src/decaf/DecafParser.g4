@@ -12,9 +12,9 @@ options
 
 program: PROGRAM LCURLY field_decl* method_decl* RCURLY;
 
-field_decl: LCURLY (type id | type id int_literal (type id | type id int_literal VIRGULA int_literal)*) RCURLY FINAL;
+field_decl: (type id | type id SINAL int_literal SINAL ((VIRGULA type id | type id SINAL int_literal SINAL)+)?) FINAL;
 
-method_decl: (LCURLY type | RESERVA RCURLY id) (LCURLY type id ((VIRGULA type id)+)? RCURLY)? block; 
+method_decl: (type | RESERVA) id SINAL ((type id (VIRGULA type id)+)?) SINAL block; 
 
 block: LCURLY var_decl* statement* RCURLY;
 
@@ -22,14 +22,14 @@ var_decl: type id ((VIRGULA type id)+)? FINAL;
 
 type: TYPE;
 
-statement: location assign_op expr FINAL | method_call | RESERVA SINAL expr SINAL block SINAL RESERVA block FINAL | RESERVA SINAL id SINAL expr SINAL expr SINAL block FINAL | RESERVA SINAL expr SINAL FINAL | 
+statement: location assign_op expr FINAL | method_call FINAL | RESERVA SINAL expr SINAL block SINAL RESERVA block SINAL | RESERVA SINAL id SINAL expr FINAL expr FINAL block SINAL | RESERVA SINAL expr SINAL FINAL | 
 RESERVA FINAL | RESERVA FINAL | block;
 
 assign_op: OP;
 
 method_name: id;
 
-expr: location | method_call | literal | expr bin_op expr | ARITH expr | SINAL expr | SINAL expr SINAL;
+expr: location | method_call | literal | expr bin_op expr | MENOS expr | SINAL expr | SINAL expr SINAL;
 
 callout_arg: expr | string_literal;
 
@@ -51,11 +51,7 @@ cond_op: COND;
 
 literal: int_literal | char_literal | bool_literal; 
 
-id: alpha (alpha_num)*;
-
-alpha_num: alpha | digit ; 
-
-alpha: BETO;
+id: ID;
 
 digit: INTLARAL;
 
@@ -70,5 +66,3 @@ hex_literal: hex_digit (hex_digit) (hex_digit)*;
 bool_literal: BOOL;
 
 char_literal: (CHAR)*;
-
-

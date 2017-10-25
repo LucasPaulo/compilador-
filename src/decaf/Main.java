@@ -73,7 +73,10 @@ class Main {
 						case DecafLexer.STRINGLITERAL:
 							type = " STRINGLITERAL";
 							break;
-						}//aacc
+						case DecafLexer.TYPE:
+							type = " TYPE";
+							break;
+						}//aaacaac
 		        			System.out.println (token.getLine() + type + " " + text);
 		        		}
 		        		done = true;

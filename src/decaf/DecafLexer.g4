@@ -19,40 +19,42 @@ RCURLY : '}';
 
 PROGRAM: 'class Program'; 
 
-RESERVA:('if'|'callout'|'class'|'else'|'if'|'return'|'void'|'for'|'forpar'|'break'|'continue');
+RESERVA: ('if'|'callout'|'class'|'else'|'if'|'return'|'void'|'for'|'forpar'|'break'|'continue');
 
-TYPE: ('int'|'boolean');
+TYPE: 'int'|'boolean';
 
-BOOL: ('true'|'false');
+BOOL: 'true'|'false';
 
 CALLOUT: 'callout';
 
-BETO: [a-z|A-Z];
+//BETO: ('a'..'z'|'A'..'Z')+;
 
 REL: ('<'|'<='|'!='|'>'|'==');
 
 VIRGULA: ',' ;
 
-FINAL: ';' ;
+FINAL: ';';
 
-OP: ('=' | '+=' | '-=');
+OP: '='|'+='|'-=';
 
-COND: ('&&'|'||');
+COND: '&&'|'||';
 
-SINAL: ('+'|'*'|'['|'|'|'('|')'|']'|'!');
+SINAL: ('*'|'|'|'('|')'|'!'|'['|']');
 
-ARITH: '+'|'-'|'*'|'/'|'%';
+ARITH: ('+'|'*'|'/'|'%');
+
+MENOS: '-';
 
 INTLARAL : ('0x')?('a'..'f'|'A'..'F'|'0'..'9')+('0'..'9')*;
 
-STRINGLITERAL: '\"'(ESC|'\''|[a-zA-Z])+'\"';
+\\STRINGLITERAL: '\"'(ESC|'\''|[a-zA-Z])+'\"';
 
 WS_ : (' ' | '\n' ) -> skip;
 
 SL_COMMENT : '//' (~'\n')* '\n' -> skip;
 
 CHAR : '\'' (ESC|'\\t'|'\\\\'|[a-zA-Z0-9]) '\'';
-STRING : '"' (ESC|POT|'a'..'z'|'A'..'Z'|'\\\\'|' ')+ '"' ;
+STRING : '\"' (ESC|POT|'a'..'z'|'A'..'Z'|'\\\\'|' ')+ '\"';
 
 ID  : ('a'..'z'|'A'..'Z'|'_')+([0-9]*);
 
