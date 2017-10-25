@@ -18,11 +18,11 @@ method_decl: (type | RESERVA) id SINAL ((type id (VIRGULA type id)+)?) SINAL blo
 
 block: LCURLY var_decl* statement* RCURLY;
 
-var_decl: type id ((VIRGULA type id)+)? FINAL; 
+var_decl: type id (((VIRGULA type id)+)?) FINAL; 
 
 type: TYPE;
 
-statement: location assign_op expr FINAL | method_call FINAL | RESERVA SINAL expr SINAL block SINAL RESERVA block SINAL | RESERVA SINAL id SINAL expr FINAL expr FINAL block SINAL | RESERVA SINAL expr SINAL FINAL | 
+statement: location assign_op expr FINAL | method_call FINAL | RESERVA SINAL expr SINAL block SINAL RESERVA block SINAL | RESERVA SINAL id SINAL expr FINAL expr FINAL block SINAL | RESERVA (expr)? FINAL | 
 RESERVA FINAL | RESERVA FINAL | block;
 
 assign_op: OP;

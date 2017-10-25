@@ -47,7 +47,7 @@ MENOS: '-';
 
 INTLARAL : ('0x')?('a'..'f'|'A'..'F'|'0'..'9')+('0'..'9')*;
 
-\\STRINGLITERAL: '\"'(ESC|'\''|[a-zA-Z])+'\"';
+//STRINGLITERAL: '\"'(ESC|'\''|[a-zA-Z])+'\"';
 
 WS_ : (' ' | '\n' ) -> skip;
 
